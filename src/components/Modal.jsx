@@ -6,6 +6,7 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
   const [formState, setFormState] = useState(
     defaultValue || {
       page: "",
+      page_B: "",
       description: "",
       status: "live",
     }
@@ -52,8 +53,12 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
       <div className="modal">
         <form>
           <div className="form-group">
-            <label htmlFor="page">Page</label>
+            <label htmlFor="page">Part Number</label>
             <input name="page" onChange={handleChange} value={formState.page} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="page_B">Name</label>
+            <input name="page_B" onChange={handleChange} value={formState.page_B} />
           </div>
           <div className="form-group">
             <label htmlFor="description">Description</label>
@@ -70,9 +75,9 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
               onChange={handleChange}
               value={formState.status}
             >
-              <option value="live">Live</option>
-              <option value="draft">Draft</option>
-              <option value="error">Error</option>
+              <option value="live">Active</option>
+              <option value="draft">Pending</option>
+              <option value="error">Hold</option>
             </select>
           </div>
           {errors && <div className="error">{`Please include: ${errors}`}</div>}

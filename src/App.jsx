@@ -7,21 +7,6 @@ import { Modal } from "./components/Modal";
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [rows, setRows] = useState([
-    {
-      page: "Home",
-      description: "This is the main page of the website",
-      status: "live",
-    },
-    {
-      page: "About Us",
-      description: "This page has details about the company",
-      status: "draft",
-    },
-    {
-      page: "Pricing",
-      description: "Prices for different subscriptions",
-      status: "error",
-    },
   ]);
   const [rowToEdit, setRowToEdit] = useState(null);
 
@@ -31,7 +16,6 @@ function App() {
 
   const handleEditRow = (idx) => {
     setRowToEdit(idx);
-
     setModalOpen(true);
   };
 
